@@ -1,0 +1,17 @@
+
+a.out:     format de fichier binary
+
+
+Déassemblage de la section .data:
+
+00000000 <.data>:
+   0:	8fa40000 	lw	a0,0(sp)
+   4:	27a50004 	addiu	a1,sp,4
+   8:	24a60004 	addiu	a2,a1,4
+   c:	00041080 	sll	v0,a0,0x2
+  10:	00c23021 	addu	a2,a2,v0
+  14:	0c100009 	jal	0x400024
+  18:	00000000 	nop
+  1c:	3402000a 	li	v0,0xa
+  20:	0000000c 	syscall
+  24:	03e00008 	jr	ra
