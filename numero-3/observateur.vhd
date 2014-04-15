@@ -2,7 +2,7 @@ library work;
 
 library ieee; use ieee.std_logic_1164.all;
 
-entity human is
+entity observateur is
     port(
         clk: in std_logic;
         input: in std_logic;
@@ -10,7 +10,7 @@ entity human is
     );
 end entity;
 
-architecture lazy of human is
+architecture lazy of observateur is
 
     type state_t is (
         S0, -- reset

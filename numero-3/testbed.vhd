@@ -7,7 +7,6 @@ entity testbed is
 
 end entity;
 
-
 -- testbed for the snail
 architecture snail of testbed is
 
@@ -47,7 +46,7 @@ begin
     hourra <= hourras(cycle mod 14);
 
     snail: entity work.snail port map(clk, input, temp);
-    human: entity work.human port map(clk, temp, hourra);
+    observateur: entity work.observateur port map(clk, temp, hourra);
 
     process is
     begin

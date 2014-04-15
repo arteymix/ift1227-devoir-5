@@ -10,7 +10,7 @@ GHDLFLAGS=
 all: testbed
 
 # Elaboration target
-testbed: /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164.o /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164_body.o snail.o human.o testbed.o
+testbed: /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164.o /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164_body.o snail.o observateur.o testbed.o
 	$(GHDL) -e $(GHDLFLAGS) $@
 
 # Run target
@@ -26,7 +26,7 @@ run: testbed
 	exit 1
 snail.o: snail.vhd
 	$(GHDL) -a $(GHDLFLAGS) $<
-human.o: human.vhd
+observateur.o: observateur.vhd
 	$(GHDL) -a $(GHDLFLAGS) $<
 testbed.o: testbed.vhd
 	$(GHDL) -a $(GHDLFLAGS) $<
@@ -35,5 +35,5 @@ testbed.o: testbed.vhd
 /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164.o: 
 /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164_body.o:  /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164.o
 snail.o:  /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164.o
-human.o:  /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164.o
-testbed.o:  /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164.o /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164_body.o snail.o human.o
+observateur.o:  /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164.o
+testbed.o:  /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164.o /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164_body.o snail.o observateur.o
