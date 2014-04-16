@@ -52,7 +52,12 @@ begin
                         state <= S2;
                     end if;
 
-                when S3 => state <= S0;
+                when S3 => 
+                 if input = '1' then
+                    state <= S1;
+                 else
+                    state <= S0;
+                end if;
 
             end case;
         end if;
